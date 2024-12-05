@@ -16,30 +16,24 @@ This project contains automated tests for the flight status checking functionali
 
 # Project Structure
 
-
-npm install chromedriver --save-dev
-npm install
-
-automation-practice-tests/
-│
-├── pages/                     # Contains Page Object Model classes
-│   ├── HomePage.ts
-│   ├── LoginPage.ts
-│   ├── ProductPage.ts
-│   └── SearchResultsPage.ts
-│
-├── tests/                     # Contains test scripts
-│   ├── AddToCart.test.ts
-│   ├── Login.test.ts
-│   └── Search.test.ts
-│
-├── package.json               # NPM configuration file
-└── tsconfig.json              # TypeScript configuration file
-
-- You can run the test suite using the following command':
-  npm test
-
-
+automation
+|
+├── src/
+│   ├── pages/
+│       └── flightStatusPage.ts
+│   └── data/
+│       └── flightData.ts
+├── tests/
+│   └── api-automation/
+|       └──userApi.spec.ts
+|       └── web-automation/
+|       └── flightStatus.spec.ts
+|
+├── package-lock.json
+├── package.json
+├── playwright.config.ts
+├── README.md
+└── storageState.json
 
 
 # Key Components
