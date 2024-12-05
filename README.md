@@ -56,6 +56,27 @@ This project contains automated tests for the flight status checking functionali
 |
 └── storageState.json
 
+
+
+│
+├── pages/                     # Contains Page Object Model classes
+│   ├── flightStatusPage.ts
+│
+├── data/
+|   ├── flight data
+├── tests/                     # Contains test scripts
+│   ├── userAPI.spect.ts
+│   ├── FlightStatusTest.ts
+│  
+│
+├── playwright.config.ts
+├── package.json               # NPM configuration file
+├── tsconfig.json              # TypeScript configuration file
+└── storageState.json
+
+
+
+
 # Key Components
 Page Objects
 
