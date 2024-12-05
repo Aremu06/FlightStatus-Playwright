@@ -14,8 +14,7 @@ This project contains automated tests for the flight status checking functionali
 1. Download and unzip the project in your desired local folder
 2. run: npm install
 
-## Project Structure
-
+Project Structure
 
 ├── src/
 │   ├── pages/
