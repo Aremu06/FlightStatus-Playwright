@@ -1,95 +1,52 @@
-# Flight Status Testing Project
+# Automation Test Suite for AutomationPractice.pl
 
-# Overview
-This project contains automated tests for the flight status checking functionality using Playwright and TypeScript. The tests verify the core functionality of searching flights by route and flight number.
+This repository contains automated end-to-end (E2E) tests for the website [AutomationPractice.pl](http://www.automationpractice.pl/index.php). The tests are written in TypeScript using Selenium WebDriver and follow the Page Object Model (POM) design pattern.
 
-# Prerequisites
+## Table of Contents
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-- TypeScript
-- Playwright Test Framework
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Tests](#running-the-tests)
+- [Test Structure](#test-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-# Installation
-1. Download and unzip the project in your desired local folder
-2. run: npm install
+## Features
 
-# Project Structure
+- **Login Tests**: Validate user login functionality with valid and invalid credentials.
+- **Search Functionality**: Test searching for both existing and non-existing products.
+- **Add to Cart Functionality**: Ensure users can add products to the shopping cart successfully.
 
-automation 
-|
-├── src/
-│   ├── pages/
-│       └── flightStatusPage.ts
-│   └── data/
-│       └── flightData.ts
-├── tests/
-│   └── api-automation/
-|       └──userApi.spec.ts
-|       └── web-automation/
-|       └── flightStatus.spec.ts
-|
-├── package-lock.json
-├── package.json
-├── playwright.config.ts
-├── README.md
-└── storageState.json
+## Prerequisites
 
+Before you begin, ensure you have met the following requirements:
 
-# Key Components
-Page Objects
+- Node.js (v14 or later)
+- npm (Node Package Manager)
+- Chrome WebDriver (or the appropriate driver for your browser)
 
-- FlightStatusPage: Handles interactions with the flight status page elements
+You can install Chrome WebDriver using npm as follows:
 
-    - Search by route
-    - Search by flight number
-    - Date selection
-    - Results verification
+```bash
+npm install chromedriver --save-dev
+npm install
 
-# Test Data
+automation-practice-tests/
+│
+├── pages/                     # Contains Page Object Model classes
+│   ├── HomePage.ts
+│   ├── LoginPage.ts
+│   ├── ProductPage.ts
+│   └── SearchResultsPage.ts
+│
+├── tests/                     # Contains test scripts
+│   ├── AddToCart.test.ts
+│   ├── Login.test.ts
+│   └── Search.test.ts
+│
+├── package.json               # NPM configuration file
+└── tsconfig.json              # TypeScript configuration file
 
-- flightData.ts: Contains test data for:
-
-    - Airport Information
-    - Flight numbers
-
-# Running Tests
-- Run all tests:npx playwright test
-
-# Test Coverage
-1. Current Test Scenarios:
-
-    1. Flight status search by route
-        - Validates departure and arrival city selection
-        - Handles date selection
-        - Verifies result display
-
-
-    2. Flight status search by flight number
-
-        - Validates flight number input
-        - Handles date selection
-        - Verifies result display
-
-    3. Flight status search by invalid route
-        - Validates invalid route departure and arrival city selection
-        - Handles date selection
-        - Verifies errorMessage display
-
-# Browser Support
-Tests run on the following browsers:
-
-- Microsoft Edge
-- Chrome
-- Firefox
-
-# Configuration
-The tests use custom browser context settings including:
-
-- User Agent specification
-- Locale settings (en-GB)
-- Custom HTTP headers
-
-# Additional Resources
-- [Playwright Documentation](https://playwright.dev/docs/intro)
-- [TypeScript Documentation](https://www.typescriptlang.org/)
+- You can run the test suite using the following command':
+  npm test
