@@ -15,6 +15,7 @@ This project contains automated tests for the flight status checking functionali
 2. run: npm install
 
 # Project Structure
+
 project-root/
 |
 ├── src/       
