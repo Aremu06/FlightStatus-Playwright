@@ -16,7 +16,7 @@ This project contains automated tests for the flight status checking functionali
 
 # Project Structure
 
-automation
+automation 
 |
 ├── src/
 │   ├── pages/
