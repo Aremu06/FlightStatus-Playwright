@@ -17,15 +17,15 @@ This project contains automated tests for the flight status checking functionali
 # Project Structure
 
 ├── src/
-│   ├── pages/
-│   │   └── flightStatusPage.ts
-│   └── data/
-│       └── flightData.ts
-├── tests/
-│   └── api-automation/
-|       └──userApi.spec.ts
-|       └── web-automation/
-|       └── flightStatus.spec.ts
+│    ├── pages/
+│    │   └── flightStatusPage.ts
+│    └── data/
+│        └── flightData.ts
+├──  tests/
+│    └── api-automation/
+|        └──userApi.spec.ts
+|        └── web-automation/
+|        └── flightStatus.spec.ts
 |
 ├── package-lock.json
 ├── package.json
