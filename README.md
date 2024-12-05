@@ -10,11 +10,11 @@ This project contains automated tests for the flight status checking functionali
 - TypeScript
 - Playwright Test Framework
 
-# Installation
+## Installation
 1. Download and unzip the project in your desired local folder
 2. run: npm install
 
-# Project Structure
+## Project Structure
 
 
 ├── src/
@@ -34,7 +34,7 @@ This project contains automated tests for the flight status checking functionali
 ├── README.md
 └── storageState.json
 
-# Key Components
+## Key Components
 Page Objects
 
 - FlightStatusPage: Handles interactions with the flight status page elements
@@ -44,7 +44,7 @@ Page Objects
     - Date selection
     - Results verification
 
-# Test Data
+## Test Data
 
 - flightData.ts: Contains test data for:
 
