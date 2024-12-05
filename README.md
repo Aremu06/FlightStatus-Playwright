@@ -17,26 +17,32 @@ This project contains automated tests for the flight status checking functionali
 # Project Structure
 
 ├── src/
-
+|    |
 │    ├── pages/
-
-│    │   └── flightStatusPage.ts
-
+|
+│       └── flightStatusPage.ts
+|
 │    └── data/
-
+|
 │        └── flightData.ts
 ├──  tests/
-
+|
 │    └── api-automation/
-
+|
 |        └──userApi.spec.ts
+|
 |        └── web-automation/
+|
 |        └── flightStatus.spec.ts
 |
 ├── package-lock.json
+|
 ├── package.json
+|
 ├── playwright.config.ts
+|
 ├── README.md
+|
 └── storageState.json
 
 # Key Components
