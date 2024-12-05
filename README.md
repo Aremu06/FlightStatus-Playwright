@@ -16,6 +16,7 @@ This project contains automated tests for the flight status checking functionali
 
 # Project Structure
 
+
 ├── src/
 │   ├── pages/
 │   │   └── flightStatusPage.ts
