@@ -15,7 +15,6 @@ This project contains automated tests for the flight status checking functionali
 2. run: npm install
 
 Project Structure
-
 ├── src/
 │   ├── pages/
 │   │   └── flightStatusPage.ts
@@ -33,8 +32,7 @@ Project Structure
 ├── README.md
 └── storageState.json
 
-
-Key Components
+## Key Components
 Page Objects
 
 - FlightStatusPage: Handles interactions with the flight status page elements
