@@ -14,23 +14,22 @@ This project contains automated tests for the flight status checking functionali
 1. Download and unzip the project in your desired local folder
 2. run: npm install
 
-Project Structure
-├── src/
-│   ├── pages/
-│   │   └── flightStatusPage.ts
-│   └── data/
-│       └── flightData.ts
-├── tests/
-│   └── api-automation/
-|       └──userApi.spec.ts
-|       └── web-automation/
-|       └── flightStatus.spec.ts
-|
-├── package-lock.json
-├── package.json
+# Project Structure
+project-root/
+├── src/       
+│   ├── pages/           # Page-specific components
+│   ├── data/            # flight test data
+│
+├── tests/               # Automated tests
+│   ├── api-automation/  # api automation test tests
+│   ├── web/             # web UI tests
+│
+├── .gitignore           # Files and directories to ignore in Git
+├── package.json         # Project metadata and dependencies
 ├── playwright.config.ts
-├── README.md
+├── README.md            # Documentation for the project
 └── storageState.json
+
 
 ## Key Components
 Page Objects
