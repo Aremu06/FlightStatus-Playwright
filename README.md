@@ -33,7 +33,8 @@ Project Structure
 ├── README.md
 └── storageState.json
 
-## Key Components
+
+Key Components
 Page Objects
 
 - FlightStatusPage: Handles interactions with the flight status page elements
