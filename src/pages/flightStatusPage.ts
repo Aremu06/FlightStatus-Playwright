@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { expect, Locator, Page } from '@playwright/test';
 
 export class FlightStatusPage {
   [x: string]: any;
@@ -75,7 +75,7 @@ export class FlightStatusPage {
   }
 
   async getErrorMessage() {
-    await this.errorMessage.isVisible();
+    await expect(this.errorMessage).toBeTruthy();
   }
 
   async getResultContainer() {
