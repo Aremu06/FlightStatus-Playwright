@@ -33,7 +33,7 @@ export class FlightStatusPage {
     this.flightNumberRadioButton = page.getByLabel('Flight number');
     this.flightNumberInput = page.locator('form[name="flight-search-by-criteria"]').getByText('Flight number')
     this.errorMessage = page.locator("//h2[.='Unfortunately, we could not find any results for your search.']")
-    this.resultsContainer = page.locator(".o-search-flight-status__flight-list-content");
+    this.resultsContainer = page.locator(".o-search-flight-status__flight-list-cards");
 
     this.defaultUrl = "https://www.eurowings.com/en/information/at-the-airport/flight-status.html";
 
@@ -81,7 +81,8 @@ export class FlightStatusPage {
   }
 
   async getResultContainer() {
-    await this.resultsContainer.contentFrame();
+   // await this.resultsContainer.contentFrame();
+    await this.resultsContainer.waitFor()
     await expect(this.resultsContainer).toBeVisible
   }
 }
