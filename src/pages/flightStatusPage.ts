@@ -81,6 +81,7 @@ export class FlightStatusPage {
   }
 
   async getResultContainer() {
-    await this.resultsContainer.contentFrame()
+    await this.resultsContainer.contentFrame();
+    await expect(this.resultsContainer).toBeVisible
   }
 }
