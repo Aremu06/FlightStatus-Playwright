@@ -76,7 +76,7 @@ test.describe('Flight Status Tests with Enhanced Access Handling', () => {
     await flightStatusPage.selectDestinationAirport(Airport.invalidDepartureAirport.cityCode);
     await flightStatusPage.selectDate(testData[0].date);
     await flightStatusPage.search();
-    await expect(flightStatusPage.getErrorMessage()).toBeTruthy();
+    await flightStatusPage.getErrorMessage();
 
   });
 

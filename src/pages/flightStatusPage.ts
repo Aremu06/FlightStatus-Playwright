@@ -1,13 +1,13 @@
 import { expect, Locator, Page } from '@playwright/test';
 
 export class FlightStatusPage {
-  [x: string]: any;
-  getResults() {
-    throw new Error('Method not implemented.');
-  }
-  getError() {
-    throw new Error('Method not implemented.');
-  }
+  // [x: string]: any;
+  // getResults() {
+  //   throw new Error('Method not implemented.');
+  // }
+  // getError() {
+  //   throw new Error('Method not implemented.');
+  // }
   private page: Page;
 
   readonly departureAirportInput: Locator;
@@ -32,7 +32,7 @@ export class FlightStatusPage {
     this.searchButton = page.locator("button[class='a-cta a-cta-prio1']");
     this.flightNumberRadioButton = page.getByLabel('Flight number');
     this.flightNumberInput = page.locator('form[name="flight-search-by-criteria"]').getByText('Flight number')
-    this.errorMessage = page.locator("//h2[contains(text(),'Unfortunately, we could not find any results for y')]")
+    this.errorMessage = page.locator("//h2[.='Unfortunately, we could not find any results for your search.']")
     this.resultsContainer = page.locator(".o-search-flight-status__flight-list-content");
 
     this.defaultUrl = "https://www.eurowings.com/en/information/at-the-airport/flight-status.html";
@@ -75,7 +75,9 @@ export class FlightStatusPage {
   }
 
   async getErrorMessage() {
-    await expect(this.errorMessage).toBeTruthy();
+  //  await expect(this.errorMessage).toBeTruthy();
+       await expect(this.errorMessage).toBeVisible();
+
   }
 
   async getResultContainer() {
