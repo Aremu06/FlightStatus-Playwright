@@ -21,6 +21,7 @@ export class FlightStatusPage {
   readonly flightNumberRadioButton: Locator;
   readonly defaultUrl: string;
   readonly resultText: string;
+  readonly dateInput: (date: string) => Locator;
 
 
   constructor(page: Page) {
@@ -34,8 +35,8 @@ export class FlightStatusPage {
     this.flightNumberInput = page.locator('form[name="flight-search-by-criteria"]').getByText('Flight number')
     this.errorMessage = page.locator("//h2[.='Unfortunately, we could not find any results for your search.']")
     this.resultsContainer = page.locator(".o-search-flight-status__flight-list-cards");
-
     this.defaultUrl = "https://www.eurowings.com/en/information/at-the-airport/flight-status.html";
+    this.dateInput = (date: string) => page.locator(`input[value='${date}']`); // Dynamic locator
 
 
   }
@@ -61,7 +62,9 @@ export class FlightStatusPage {
 
   async selectDate(date: string) {
     await this.datePicker.click();
-    await this.page.locator(`input[value='${date}']`).click();
+   // await this.page.locator(`input[value='${date}']`).click(); // dynamically insert the date value into the selector
+    await this.dateInput(date).click();
+
   }
 
   async search() {
@@ -82,7 +85,7 @@ export class FlightStatusPage {
 
   async getResultContainer() {
    // await this.resultsContainer.contentFrame();
-    await this.resultsContainer.waitFor()
+    await this.page.waitForLoadState();
     await expect(this.resultsContainer).toBeVisible
   }
 }
