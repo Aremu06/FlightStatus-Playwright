@@ -1,13 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
 export class FlightStatusPage {
-  // [x: string]: any;
-  // getResults() {
-  //   throw new Error('Method not implemented.');
-  // }
-  // getError() {
-  //   throw new Error('Method not implemented.');
-  // }
   private page: Page;
 
   readonly departureAirportInput: Locator;
@@ -23,7 +16,6 @@ export class FlightStatusPage {
   readonly resultText: string;
   readonly dateInput: (date: string) => Locator;
 
-
   constructor(page: Page) {
     this.page = page;
     this.airportSelectBox = page.locator('//div[@class="o-compact-search__cta-button"]');
@@ -36,9 +28,19 @@ export class FlightStatusPage {
     this.errorMessage = page.locator("//h2[.='Unfortunately, we could not find any results for your search.']")
     this.resultsContainer = page.locator(".o-search-flight-status__flight-list-cards");
     this.defaultUrl = "https://www.eurowings.com/en/information/at-the-airport/flight-status.html";
-    this.dateInput = (date: string) => page.locator(`input[value='${date}']`); // Dynamic locator
+    this.dateInput = (date: string) => page.locator(`input[value='${date}']`);
+  }
 
+  formatDate(date: Date): string {
+    if (date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0')
 
+      return `${year}-${month}-${day}`;
+    }
+
+    return '';
   }
 
   async navigate() {
@@ -52,8 +54,8 @@ export class FlightStatusPage {
     await this.page.waitForTimeout(1000);
     await this.page.keyboard.press('Enter')
   }
-  async selectDestinationAirport(destination: string) {
 
+  async selectDestinationAirport(destination: string) {
     await this.airportSelectBox.nth(1).click();
     await this.arrivalAirportInput.click();
     await this.arrivalAirportInput.fill(destination)
@@ -62,9 +64,7 @@ export class FlightStatusPage {
 
   async selectDate(date: string) {
     await this.datePicker.click();
-   // await this.page.locator(`input[value='${date}']`).click(); // dynamically insert the date value into the selector
     await this.dateInput(date).click();
-
   }
 
   async search() {
@@ -78,13 +78,10 @@ export class FlightStatusPage {
   }
 
   async getErrorMessage() {
-  //  await expect(this.errorMessage).toBeTruthy();
-       await expect(this.errorMessage).toBeVisible();
-
+    await expect(this.errorMessage).toBeVisible();
   }
 
   async getResultContainer() {
-   // await this.resultsContainer.contentFrame();
     await this.page.waitForLoadState();
     await expect(this.resultsContainer).toBeVisible
   }

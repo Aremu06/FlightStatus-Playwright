@@ -24,9 +24,9 @@ test('POST request - Create a new user', async ({ request }) => {
     data: newUser,  // Playwright automatically handles JSON stringification
     headers: { 'Content-Type': 'application/json' }
   });
-  
+
   const data = await response.json();
-  
+
   expect(response.status()).toBe(201);
   expect(data.name).toBe(newUser.name);
   expect(data.job).toBe(newUser.job);
@@ -40,19 +40,19 @@ test('PUT request - Update an existing user', async ({ request }) => {
   };
 
   const response = await request.put(`${baseUrl}/users/2`, {
-    data: UpdateUser, 
+    data: UpdateUser,
     headers: { 'Content-Type': 'application/json' }
   });
-  
+
   const data = await response.json();
-  
+
   expect(response.status()).toBe(200);
   expect(data.name).toBe(UpdateUser.name);
   expect(data.job).toBe(UpdateUser.job);
   expect(data).toHaveProperty('updatedAt');
 });
 
-test('DELETE request - Remove a user', async ({request}) =>{
+test('DELETE request - Remove a user', async ({ request }) => {
   const response = await request.delete(`${baseUrl}/users/2`);
 
   expect(response.status()).toBe(204);

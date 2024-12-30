@@ -8,10 +8,10 @@ test('GET request - Fetch list of users', async () => {
   const data = await response.json();
 
   // Assertions to validate the response
-  expect(response.status).toBe(200);  
-  expect(data.page).toBe(2);          
-  expect(data.data.length).toBeGreaterThan(0);  
-  expect(data.data[0]).toHaveProperty('id');  
+  expect(response.status).toBe(200);
+  expect(data.page).toBe(2);
+  expect(data.data.length).toBeGreaterThan(0);
+  expect(data.data[0]).toHaveProperty('id');
 
   console.log(response);
 });
@@ -28,17 +28,17 @@ test('POST request - Create a new user', async () => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newUser)
-    
+
   });
-  
+
   // Step 3: Parse the response and validate
   const data = await response.json();
-  
+
   // Assertions to ensure the user is created correctly
-  expect(response.status).toBe(201);                
-  expect(data.name).toBe(newUser.name);             
-  expect(data.job).toBe(newUser.job);               
-  expect(data).toHaveProperty('id'); 
-  
+  expect(response.status).toBe(201);
+  expect(data.name).toBe(newUser.name);
+  expect(data.job).toBe(newUser.job);
+  expect(data).toHaveProperty('id');
+
   console.log(response);
 });
